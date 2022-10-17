@@ -18,6 +18,11 @@ def main(results, targets, train_labels, a, b):
 	mlb = MultiLabelBinarizer(sparse_output=True)
 	targets = mlb.fit_transform(targets)
 
+	topk = 5
+	with open('predictions.txt', 'w') as fout:
+		for labels in res:
+			fout.write(' '.join(labels[:topk])+'\n')
+
 	p1, p3, p5, n3, n5 = get_p_1(res, targets, mlb), get_p_3(res, targets, mlb), get_p_5(res, targets, mlb), \
 						 get_n_3(res, targets, mlb), get_n_5(res, targets, mlb)
 	print('P@1:', p1, ', ', \
