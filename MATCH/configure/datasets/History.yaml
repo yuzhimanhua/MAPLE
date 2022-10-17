@@ -1,0 +1,22 @@
+name: History
+
+train:
+  texts: ./data/History/train_texts.npy
+  labels: ./data/History/train_labels.npy
+
+valid:
+  size: 20208
+
+test:
+  texts: ./data/History/test_texts.npy
+
+embedding:
+  emb_init: ./data/History/emb_init.npy
+
+output:
+  res: ./data/History/results
+
+labels_binarizer: ./data/History/labels_binarizer
+
+model:
+  emb_size: 100

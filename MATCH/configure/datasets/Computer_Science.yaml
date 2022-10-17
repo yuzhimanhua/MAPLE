@@ -1,0 +1,22 @@
+name: Computer_Science
+
+train:
+  texts: ./data/Computer_Science/train_texts.npy
+  labels: ./data/Computer_Science/train_labels.npy
+
+valid:
+  size: 53654
+
+test:
+  texts: ./data/Computer_Science/test_texts.npy
+
+embedding:
+  emb_init: ./data/Computer_Science/emb_init.npy
+
+output:
+  res: ./data/Computer_Science/results
+
+labels_binarizer: ./data/Computer_Science/labels_binarizer
+
+model:
+  emb_size: 100

@@ -1,0 +1,22 @@
+name: Environmental_Science
+
+train:
+  texts: ./data/Environmental_Science/train_texts.npy
+  labels: ./data/Environmental_Science/train_labels.npy
+
+valid:
+  size: 17620
+
+test:
+  texts: ./data/Environmental_Science/test_texts.npy
+
+embedding:
+  emb_init: ./data/Environmental_Science/emb_init.npy
+
+output:
+  res: ./data/Environmental_Science/results
+
+labels_binarizer: ./data/Environmental_Science/labels_binarizer
+
+model:
+  emb_size: 100

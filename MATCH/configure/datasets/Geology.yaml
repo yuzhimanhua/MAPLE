@@ -1,0 +1,22 @@
+name: Geology
+
+train:
+  texts: ./data/Geology/train_texts.npy
+  labels: ./data/Geology/train_labels.npy
+
+valid:
+  size: 71006
+
+test:
+  texts: ./data/Geology/test_texts.npy
+
+embedding:
+  emb_init: ./data/Geology/emb_init.npy
+
+output:
+  res: ./data/Geology/results
+
+labels_binarizer: ./data/Geology/labels_binarizer
+
+model:
+  emb_size: 100

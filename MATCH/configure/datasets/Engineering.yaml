@@ -1,0 +1,22 @@
+name: Engineering
+
+train:
+  texts: ./data/Engineering/train_texts.npy
+  labels: ./data/Engineering/train_labels.npy
+
+valid:
+  size: 44951
+
+test:
+  texts: ./data/Engineering/test_texts.npy
+
+embedding:
+  emb_init: ./data/Engineering/emb_init.npy
+
+output:
+  res: ./data/Engineering/results
+
+labels_binarizer: ./data/Engineering/labels_binarizer
+
+model:
+  emb_size: 100

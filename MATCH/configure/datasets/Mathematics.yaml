@@ -1,0 +1,22 @@
+name: Mathematics
+
+train:
+  texts: ./data/Mathematics/train_texts.npy
+  labels: ./data/Mathematics/train_labels.npy
+
+valid:
+  size: 84613
+
+test:
+  texts: ./data/Mathematics/test_texts.npy
+
+embedding:
+  emb_init: ./data/Mathematics/emb_init.npy
+
+output:
+  res: ./data/Mathematics/results
+
+labels_binarizer: ./data/Mathematics/labels_binarizer
+
+model:
+  emb_size: 100

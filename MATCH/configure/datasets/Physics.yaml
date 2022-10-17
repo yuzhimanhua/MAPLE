@@ -1,0 +1,22 @@
+name: Physics
+
+train:
+  texts: ./data/Physics/train_texts.npy
+  labels: ./data/Physics/train_labels.npy
+
+valid:
+  size: 226403
+
+test:
+  texts: ./data/Physics/test_texts.npy
+
+embedding:
+  emb_init: ./data/Physics/emb_init.npy
+
+output:
+  res: ./data/Physics/results
+
+labels_binarizer: ./data/Physics/labels_binarizer
+
+model:
+  emb_size: 100

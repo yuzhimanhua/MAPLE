@@ -1,0 +1,22 @@
+name: Art
+
+train:
+  texts: ./data/Art/train_texts.npy
+  labels: ./data/Art/train_labels.npy
+
+valid:
+  size: 9975
+
+test:
+  texts: ./data/Art/test_texts.npy
+
+embedding:
+  emb_init: ./data/Art/emb_init.npy
+
+output:
+  res: ./data/Art/results
+
+labels_binarizer: ./data/Art/labels_binarizer
+
+model:
+  emb_size: 100

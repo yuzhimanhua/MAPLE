@@ -1,0 +1,22 @@
+name: Materials_Science
+
+train:
+  texts: ./data/Materials_Science/train_texts.npy
+  labels: ./data/Materials_Science/train_labels.npy
+
+valid:
+  size: 195822
+
+test:
+  texts: ./data/Materials_Science/test_texts.npy
+
+embedding:
+  emb_init: ./data/Materials_Science/emb_init.npy
+
+output:
+  res: ./data/Materials_Science/results
+
+labels_binarizer: ./data/Materials_Science/labels_binarizer
+
+model:
+  emb_size: 100

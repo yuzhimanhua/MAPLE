@@ -1,0 +1,22 @@
+name: Economics
+
+train:
+  texts: ./data/Economics/train_texts.npy
+  labels: ./data/Economics/train_labels.npy
+
+valid:
+  size: 29827
+
+test:
+  texts: ./data/Economics/test_texts.npy
+
+embedding:
+  emb_init: ./data/Economics/emb_init.npy
+
+output:
+  res: ./data/Economics/results
+
+labels_binarizer: ./data/Economics/labels_binarizer
+
+model:
+  emb_size: 100

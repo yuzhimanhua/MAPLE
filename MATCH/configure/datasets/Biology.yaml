@@ -1,0 +1,22 @@
+name: Biology
+
+train:
+  texts: ./data/Biology/train_texts.npy
+  labels: ./data/Biology/train_labels.npy
+
+valid:
+  size: 281401
+
+test:
+  texts: ./data/Biology/test_texts.npy
+
+embedding:
+  emb_init: ./data/Biology/emb_init.npy
+
+output:
+  res: ./data/Biology/results
+
+labels_binarizer: ./data/Biology/labels_binarizer
+
+model:
+  emb_size: 100

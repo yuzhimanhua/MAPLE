@@ -1,0 +1,22 @@
+name: Sociology
+
+train:
+  texts: ./data/Sociology/train_texts.npy
+  labels: ./data/Sociology/train_labels.npy
+
+valid:
+  size: 15204
+
+test:
+  texts: ./data/Sociology/test_texts.npy
+
+embedding:
+  emb_init: ./data/Sociology/emb_init.npy
+
+output:
+  res: ./data/Sociology/results
+
+labels_binarizer: ./data/Sociology/labels_binarizer
+
+model:
+  emb_size: 100

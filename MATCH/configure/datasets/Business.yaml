@@ -1,0 +1,22 @@
+name: Business
+
+train:
+  texts: ./data/Business/train_texts.npy
+  labels: ./data/Business/train_labels.npy
+
+valid:
+  size: 12370
+
+test:
+  texts: ./data/Business/test_texts.npy
+
+embedding:
+  emb_init: ./data/Business/emb_init.npy
+
+output:
+  res: ./data/Business/results
+
+labels_binarizer: ./data/Business/labels_binarizer
+
+model:
+  emb_size: 100

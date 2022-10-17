@@ -1,0 +1,22 @@
+name: Philosophy
+
+train:
+  texts: ./data/Philosophy/train_texts.npy
+  labels: ./data/Philosophy/train_labels.npy
+
+valid:
+  size: 10174
+
+test:
+  texts: ./data/Philosophy/test_texts.npy
+
+embedding:
+  emb_init: ./data/Philosophy/emb_init.npy
+
+output:
+  res: ./data/Philosophy/results
+
+labels_binarizer: ./data/Philosophy/labels_binarizer
+
+model:
+  emb_size: 100
