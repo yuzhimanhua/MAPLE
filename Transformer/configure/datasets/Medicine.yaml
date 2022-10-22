@@ -1,0 +1,22 @@
+name: Medicine
+
+train:
+  texts: ./data/Medicine/train_texts.npy
+  labels: ./data/Medicine/train_labels.npy
+
+valid:
+  size: 405041
+
+test:
+  texts: ./data/Medicine/test_texts.npy
+
+embedding:
+  emb_init: ./data/Medicine/emb_init.npy
+
+output:
+  res: ./data/Medicine/results
+
+labels_binarizer: ./data/Medicine/labels_binarizer
+
+model:
+  emb_size: 100

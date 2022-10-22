@@ -1,0 +1,22 @@
+name: Chemistry
+
+train:
+  texts: ./data/Chemistry/train_texts.npy
+  labels: ./data/Chemistry/train_labels.npy
+
+valid:
+  size: 313133
+
+test:
+  texts: ./data/Chemistry/test_texts.npy
+
+embedding:
+  emb_init: ./data/Chemistry/emb_init.npy
+
+output:
+  res: ./data/Chemistry/results
+
+labels_binarizer: ./data/Chemistry/labels_binarizer
+
+model:
+  emb_size: 100

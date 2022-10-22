@@ -1,0 +1,22 @@
+name: Psychology
+
+train:
+  texts: ./data/Psychology/train_texts.npy
+  labels: ./data/Psychology/train_labels.npy
+
+valid:
+  size: 61322
+
+test:
+  texts: ./data/Psychology/test_texts.npy
+
+embedding:
+  emb_init: ./data/Psychology/emb_init.npy
+
+output:
+  res: ./data/Psychology/results
+
+labels_binarizer: ./data/Psychology/labels_binarizer
+
+model:
+  emb_size: 100

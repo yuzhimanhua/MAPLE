@@ -1,0 +1,22 @@
+name: Political_Science
+
+train:
+  texts: ./data/Political_Science/train_texts.npy
+  labels: ./data/Political_Science/train_labels.npy
+
+valid:
+  size: 18413
+
+test:
+  texts: ./data/Political_Science/test_texts.npy
+
+embedding:
+  emb_init: ./data/Political_Science/emb_init.npy
+
+output:
+  res: ./data/Political_Science/results
+
+labels_binarizer: ./data/Political_Science/labels_binarizer
+
+model:
+  emb_size: 100

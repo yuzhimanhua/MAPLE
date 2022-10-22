@@ -1,0 +1,22 @@
+name: CSRankings
+
+train:
+  texts: ./data/CSRankings/train_texts.npy
+  labels: ./data/CSRankings/train_labels.npy
+
+valid:
+  size: 34081
+
+test:
+  texts: ./data/CSRankings/test_texts.npy
+
+embedding:
+  emb_init: ./data/CSRankings/emb_init.npy
+
+output:
+  res: ./data/CSRankings/results
+
+labels_binarizer: ./data/CSRankings/labels_binarizer
+
+model:
+  emb_size: 100

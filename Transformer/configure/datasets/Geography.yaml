@@ -1,0 +1,22 @@
+name: Geography
+
+train:
+  texts: ./data/Geography/train_texts.npy
+  labels: ./data/Geography/train_labels.npy
+
+valid:
+  size: 11178
+
+test:
+  texts: ./data/Geography/test_texts.npy
+
+embedding:
+  emb_init: ./data/Geography/emb_init.npy
+
+output:
+  res: ./data/Geography/results
+
+labels_binarizer: ./data/Geography/labels_binarizer
+
+model:
+  emb_size: 100
