@@ -1,5 +1,7 @@
 # The Effect of Metadata on Scientific Literature Tagging: A Cross-Field Cross-Model Study
-This repository contains the datasets and source code used in our WWW 2023 submission: The Effect of Metadata on Scientific Literature Tagging: A Cross-Field Cross-Model Study.
+**NOTE: We are still finalizing our paper and will add three more datasets: Biology-MeSH, Chemistry-MeSH, and Medicine-MeSH to this repository. More details coming soon!**
+
+This repository contains the datasets and source code used in our paper [The Effect of Metadata on Scientific Literature Tagging: A Cross-Field Cross-Model Study]().
 
 ## Links
 
