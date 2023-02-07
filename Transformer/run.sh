@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DATASET=Political_Science
+DATASET=Art
 
 METADATA=None
 ./preprocess.sh $DATASET $METADATA

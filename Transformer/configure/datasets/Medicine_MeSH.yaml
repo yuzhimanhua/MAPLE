@@ -1,0 +1,22 @@
+name: Medicine_MeSH
+
+train:
+  texts: ./data/Medicine_MeSH/train_texts.npy
+  labels: ./data/Medicine_MeSH/train_labels.npy
+
+valid:
+  size: 255242
+
+test:
+  texts: ./data/Medicine_MeSH/test_texts.npy
+
+embedding:
+  emb_init: ./data/Medicine_MeSH/emb_init.npy
+
+output:
+  res: ./data/Medicine_MeSH/results
+
+labels_binarizer: ./data/Medicine_MeSH/labels_binarizer
+
+model:
+  emb_size: 100

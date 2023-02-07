@@ -1,0 +1,22 @@
+name: Biology_MeSH
+
+train:
+  texts: ./data/Biology_MeSH/train_texts.npy
+  labels: ./data/Biology_MeSH/train_labels.npy
+
+valid:
+  size: 246341
+
+test:
+  texts: ./data/Biology_MeSH/test_texts.npy
+
+embedding:
+  emb_init: ./data/Biology_MeSH/emb_init.npy
+
+output:
+  res: ./data/Biology_MeSH/results
+
+labels_binarizer: ./data/Biology_MeSH/labels_binarizer
+
+model:
+  emb_size: 100

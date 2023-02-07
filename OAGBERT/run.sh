@@ -2,6 +2,8 @@
 
 dataset=Art
 python match.py --dataset $dataset
+# dataset=Biology_MeSH
+# python match_mesh.py --dataset $dataset
 
 metadata=None
 python encode.py --dataset $dataset --metadata $metadata

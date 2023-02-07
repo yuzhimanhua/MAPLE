@@ -1,0 +1,22 @@
+name: Chemistry_MeSH
+
+train:
+  texts: ./data/Chemistry_MeSH/train_texts.npy
+  labels: ./data/Chemistry_MeSH/train_labels.npy
+
+valid:
+  size: 127954
+
+test:
+  texts: ./data/Chemistry_MeSH/test_texts.npy
+
+embedding:
+  emb_init: ./data/Chemistry_MeSH/emb_init.npy
+
+output:
+  res: ./data/Chemistry_MeSH/results
+
+labels_binarizer: ./data/Chemistry_MeSH/labels_binarizer
+
+model:
+  emb_size: 100

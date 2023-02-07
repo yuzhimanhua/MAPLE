@@ -1,0 +1,24 @@
+name: BertXML
+
+model:
+  hidden_size: 100
+  n_layers: 1
+  n_aheads: 2
+  intermediate_size: 200
+  dropout: 0.1
+  n_probes: 10
+  src_max_len: 500
+  emb_trainable: True
+
+train:
+  batch_size: 256
+  nb_epoch: 20
+  swa_warmup: 4
+
+valid:
+  batch_size: 256
+
+predict:
+  batch_size: 256
+
+path: ./data/Biology_MeSH/models
