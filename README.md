@@ -1,20 +1,24 @@
 # The Effect of Metadata on Scientific Literature Tagging: A Cross-Field Cross-Model Study
-**NOTE: We are still finalizing our paper and will add three more datasets: Biology-MeSH, Chemistry-MeSH, and Medicine-MeSH to this repository. More details coming soon!**
+
+[![License: Open Data Commons Attribution](https://img.shields.io/badge/License-ODC_BY-brightgreen.svg)](https://opendatacommons.org/licenses/by/)
 
 This repository contains the datasets and source code used in our paper [The Effect of Metadata on Scientific Literature Tagging: A Cross-Field Cross-Model Study]().
 
 ## Links
 
 - [Datasets](#datasets)
+- [Additional Datasets with MeSH Labels](#additional-datasets-with-mesh-labels)
 - [Running Parabel](#running-parabel)
 - [Running Transformer](#running-transformer)
 - [Running OAG-BERT](#running-oag-bert)
 - [References](#references)
 
 ## Datasets
-The MAPLE benchmark constructed by us contains 20 datasets across 19 fields for scientific literature tagging. You can download the datasets from [**HERE**](https://gofile.io/d/vMcdjW). Once you unzip the downloaded file, you can see a folder ```MAPLE/```. Please put the folder under the main directory ```./``` of this code repository.
+The MAPLE benchmark constructed by us contains 20 datasets across 19 fields for scientific literature tagging. You can download the datasets from [**HERE**](https://doi.org/10.5281/zenodo.7611544). Once you unzip the downloaded file, you can see a folder ```MAPLE/```. Please put the folder under the main directory ```./``` of this code repository.
 
-There are 20 folders under ```MAPLE/```, corresponding to the 20 datasets mentioned in the submission. Their statistics are as follows:
+There are 23 folders under ```MAPLE/```, corresponding to 23 datasets. 20 of them with MAG labels are mentioned in the main text of our paper; the other 3 datasets with MeSH labels will be introduced in [the next section](#additional-datasets-with-mesh-labels). Statistics of the 20 "main" datasets are as follows:
+
+### Dataset Statistics
 
 | Folder                       | Field                         | #Papers  | #Labels  | #Venues | #Authors  | #References   |
 | ---------------------------- | ----------------------------- | -------- | -------- | ------- | --------- | ------------- |
@@ -39,6 +43,110 @@ There are 20 folders under ```MAPLE/```, corresponding to the 20 datasets mentio
 | ```Chemistry```              | Chemistry                     | 1,849,956 | 35,538   | 100     | 2,721,253  | 8,637,438     |
 | ```Medicine```               | Medicine                      | 2,646,105 | 36,619   | 100     | 4,345,385  | 7,405,779     |
 
+### Data Format
+
+In each folder (e.g., ```Art/```), you can see four files: ```authors.txt```, ```labels.txt```, ```papers.json```, and ```venues.txt```.
+
+```authors.txt``` has 3 columns: author id, normalized author name, and original author name:
+```
+12035	stephen rickerby	Stephen Rickerby
+127649	clementine deliss	Clementine Deliss
+1395514	tomas garciasalgado	Tomás García-Salgado
+...
+```
+
+```venues.txt``` has 3 columns: venue id, normalized venue name, and original venue name:
+```
+26308392	the journal of aesthetics and art criticism	The Journal of Aesthetics and Art Criticism
+93676754	modern language review	Modern Language Review
+998751717	classical world	Classical World
+...
+```
+
+```labels.txt``` has 3 columns: label id, label name, and depth of the label (1-5, with 1 being the coarsest and 5 being the finest):
+```
+2780583484	papyrus	2
+2778949450	scientific writing	2
+2780412351	purgatory	2
+...
+```
+
+```papers.json``` has text and metadata information of each paper. Each line is a json record representing one paper. For example,
+```
+{
+  "paper": "2333162778",
+  "venue": "103229351",
+  "year": "1987",
+  "title": "the life and unusual ideas of adelbert ames jr",
+  "label": [
+    "554144382", "153349607"
+  ],
+  "author": [
+    "2162173344"
+  ],
+  "reference": [
+    "132232344", "378964350", "562124327", ...
+  ],
+  "abstract": "this paper is a summary of the life and major achievements of adelbert ames jr an american ...",
+  "title_raw": "The Life and Unusual Ideas of Adelbert Ames, Jr.",
+  "abstract_raw": "This paper is a summary of the life and major achievements of Adelbert Ames, Jr., an American ..."
+}
+```
+
+## Additional Datasets with MeSH Labels
+The three additional datasets: ```Biology_MeSH```, ```Chemistry_MeSH```, and ```Medicine_MeSH``` are constructed from ```Biology```, ```Chemistry```, and ```Medicine```, respectively, by obtaining the MeSH labels of each paper (and removing those papers without MeSH labels).
+
+### Dataset Statistics
+
+| Folder                       | Field                         | #Papers  | #Labels  | #Venues | #Authors  | #References   |
+| ---------------------------- | ----------------------------- | -------- | -------- | ------- | --------- | ------------- |
+| ```Biology_MeSH```           | Biology-MeSH                  | 1,379,393 | 25,039   | 100     | 2,486,814 | 6,876,739     |
+| ```Chemistry_MeSH```         | Chemistry-MeSH                | 762,129   | 21,585   | 87      | 1,498,358 | 5,928,908     |
+| ```Medicine_MeSH```          | Medicine-MeSH                 | 1,536,660 | 25,188   | 100     | 2,791,165 | 7,190,021     |
+
+### Data Format
+
+In each folder (e.g., ```Biology_MeSH/```), you can see five files: ```authors.txt```, ```labels.txt```, **```labels_mesh.txt```**, ```papers.json```, and ```venues.txt```.
+
+```authors.txt``` and ```venues.txt``` have the same format as in the 20 "main" datasets.
+
+```labels.txt``` has 2 columns: MeSH label id and original MeSH label name:
+```
+D000818	Animals
+D001824	Body Constitution
+D005075	Biological Evolution
+...
+```
+
+```labels_mesh.txt``` has >=2 columns: MeSH label id, normalized MeSH label name, and all entry terms (i.e., synonyms) of the MeSH label:
+```
+D000818	animals	animalia
+D001824	body constitution	body constitutions	constitution body	constitutions body
+D005075	biological evolution	evolution biological
+...
+```
+
+```papers.json``` has the same format as in the 20 "main" datasets. The only difference is that the "label" field now contains all MeSH labels of the paper. For example,
+```
+{
+  "paper": "1816482797",
+  "venue": "166515463",
+  "year": "2015",
+  "title": "proteins linked to autosomal dominant and autosomal recessive disorders harbor characteristic ...",
+  "label": [
+    "D005810", "D005808", "D020125", "D019295", "D030541", ...
+  ],
+  "author": [
+    "2303839782", "2953263946", "2160643821", ...
+  ],
+  "reference": [
+    "80748578", "1563940013", "1570281893", ...
+  ],
+  "abstract": "the role of rare missense variants in disease causation remains difficult to interpret ...",
+  "title_raw": "Proteins linked to autosomal dominant and autosomal recessive disorders harbor characteristic ...",
+  "abstract_raw": "The role of rare missense variants in disease causation remains difficult to interpret ..."
+}
+```
 
 ## Running Parabel
 The code of Parabel is written in C++. It is adapted from [**the original implementation**](http://manikvarma.org/code/Parabel/download.html) by Prabhu et al. You need to run the following script.
@@ -49,30 +157,44 @@ cd ./Parabel/
 P@_k_ and NDCG@_k_ scores (_k_=1,3,5) will be shown in the last several lines of the output as well as in ```./Parabel/scores.txt```. The prediction results can be found in ```./Parabel/Sandbox/Results/{dataset}/score_mat.txt```.
 
 ## Running Transformer
+**GPUs are required. We use one NVIDIA GeForce GTX 1080 Ti GPU in our experiments.** 
+
 The code of Transformer is written in Python 3.6. It is adapted from [**the original implementation**](https://github.com/XunGuangxu/CorNet) by Xun et al. You need to first install the dependencies like this:
 ```
 cd ./Transformer/
 pip3 install -r requirements.txt
 ```
-Then, you need to download [**the pre-trained GloVe embeddings**](https://gofile.io/d/S1IJbe). Once you unzip the downloaded file, please put it (i.e., the ```data/``` folder) under ```./Transformer/```. Then, you can run the code (GPUs are strongly recommended).
+Then, you need to download [**the GloVe embeddings**](https://drive.google.com/file/d/1GNmoqocua51496sP8cr86hX-mOyR-ExW/view?usp=share_link) (originally from [here](https://nlp.stanford.edu/projects/glove/)). Once you unzip the downloaded file, please put it (i.e., the ```data/``` folder) under ```./Transformer/```. Then, you can run the code.
 ```
 ./run.sh
 ```
 P@_k_ and NDCG@_k_ scores (_k_=1,3,5) will be shown in the last several lines of the output as well as in ```./Transformer/scores.txt```. The prediction results can be found in ```./Transformer/predictions.txt```.
 
 ## Running OAG-BERT
-The code of OAG-BERT is written in Python 3.7. It is adapted from [**the original implementation**](https://github.com/THUDM/OAG-BERT) by Liu et al. You need to first install **PyTorch >= 1.7.1**, and then the [**CogDL**](https://github.com/THUDM/cogdl) package.
-```
-pip3 install cogdl
-```
-Then, you can run the code (GPUs are strongly recommended).
+**GPUs are required. We use one NVIDIA GeForce GTX 1080 Ti GPU in our experiments.** 
+
+The code of OAG-BERT is written in Python 3.7. It is adapted from [**the original implementation**](https://github.com/THUDM/OAG-BERT) by Liu et al. You need to first install PyTorch >= 1.7.1, and then the [**CogDL**](https://github.com/THUDM/cogdl) package. These two steps can be done by running the following:
 ```
 cd ./OAGBERT/
+./setup.sh
+```
+Then, you can run the code.
+```
 ./run.sh
 ```
 P@_k_ and NDCG@_k_ scores (_k_=1,3,5) will be shown in the last several lines of the output as well as in ```./OAGBERT/Parabel/scores.txt```. The prediction results can be found in ```./OAGBERT/Parabel/Sandbox/Results/{dataset}/score_mat.txt```.
 
 ## References
+If you find the MAPLE benchmark or this repository useful, please cite the following papers:
+```
+@inproceedings{zhang2023effect,
+  title={The effect of metadata on scientific literature tagging: A cross-field cross-model study},
+  author={Zhang, Yu and Jin, Bowen and Zhu, Qi and Meng, Yu and Han, Jiawei},
+  booktitle={WWW'23},
+  year={2023}
+}
+```
+and
 ```
 @inproceedings{prabhu2018parabel,
   title={Parabel: Partitioned label trees for extreme classification with application to dynamic search advertising},
