@@ -2,7 +2,7 @@
 
 [![License: Open Data Commons Attribution](https://img.shields.io/badge/License-ODC_BY-brightgreen.svg)](https://opendatacommons.org/licenses/by/)
 
-This repository contains the datasets and source code used in our paper [The Effect of Metadata on Scientific Literature Tagging: A Cross-Field Cross-Model Study]().
+This repository contains the datasets and source code used in our paper [The Effect of Metadata on Scientific Literature Tagging: A Cross-Field Cross-Model Study](https://arxiv.org/abs/2302.03341).
 
 ## Links
 
