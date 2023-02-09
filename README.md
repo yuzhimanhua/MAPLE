@@ -185,7 +185,7 @@ Then, you can run the code.
 P@_k_ and NDCG@_k_ scores (_k_=1,3,5) will be shown in the last several lines of the output as well as in ```./OAGBERT/Parabel/scores.txt```. The prediction results can be found in ```./OAGBERT/Parabel/Sandbox/Results/{dataset}/score_mat.txt```.
 
 ## References
-If you find the MAPLE benchmark or this repository useful, please cite the following papers:
+If you find the MAPLE benchmark or this repository useful, please cite our paper:
 ```
 @inproceedings{zhang2023effect,
   title={The effect of metadata on scientific literature tagging: A cross-field cross-model study},
@@ -194,7 +194,17 @@ If you find the MAPLE benchmark or this repository useful, please cite the follo
   year={2023}
 }
 ```
-and
+The MAPLE benchmark is constructed from the Microsoft Academic Graph:
+```
+@inproceedings{sinha2015overview,
+  title={An overview of microsoft academic service (mas) and applications},
+  author={Sinha, Arnab and Shen, Zhihong and Song, Yang and Ma, Hao and Eide, Darrin and Hsu, Bo-June and Wang, Kuansan},
+  booktitle={WWW'15},
+  pages={243--246},
+  year={2015}
+}
+```
+The three classifiers in this repository are from the following three papers:
 ```
 @inproceedings{prabhu2018parabel,
   title={Parabel: Partitioned label trees for extreme classification with application to dynamic search advertising},
