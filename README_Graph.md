@@ -1,0 +1,1 @@
+We create a graph format of MAPLE for graph mining tasks (e.g., node classification, link prediction). You can download the datasets from [**HERE**](https://zenodo.org/record/7787731). Once you unzip the downloaded file, you can see 20 folders, corresponding to 20 datasets. 
