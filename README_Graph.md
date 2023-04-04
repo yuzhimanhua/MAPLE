@@ -1,8 +1,14 @@
-## The Graph Format of MAPLE
-We create a graph format of MAPLE for graph mining tasks (e.g., node classification, link prediction). You can download the datasets from [**HERE**](https://zenodo.org/record/7787731). Once you unzip the downloaded file, you can see 20 folders, corresponding to 20 datasets. Each of the 20 datasets is a heterogeneous graph with 4 types of nodes (i.e., papers, labels, venues, and authors) and 4 types of edges (i.e., paper-paper edges, paper-label edges, paper-venue edges, and paper-author edges).
+# The Graph Format of MAPLE
+We create a graph format of MAPLE for graph mining tasks (e.g., node classification, link prediction). You can download the datasets from [**HERE**](https://zenodo.org/record/7787731). Once you unzip the downloaded file, there are 20 folders, corresponding to 20 datasets. Each of the 20 datasets is a heterogeneous graph with 4 types of nodes (i.e., papers, labels, venues, and authors) and 4 types of edges (i.e., paper-paper edges, paper-label edges, paper-venue edges, and paper-author edges). Each node is associated with text information, which can be viewed as node attributes.
 
-### Dataset Statistics
-#### Node Statistics
+## Links
+
+- [Dataset Statistics](#dataset-statistics)
+- [Data Format](#data-format)
+- [MeSH Nodes in Biology, Chemistry, and Medicine Datasets](#mesh-nodes-in-biology-chemistry-and-medicine-datasets)
+
+## Dataset Statistics
+### Node Statistics
 | Folder                       | Field                         | #Paper Nodes | #Label Nodes | #Venue Nodes | #Author Nodes |
 | ---------------------------- | ----------------------------- | --------- | -------- | ------- | ---------- |
 | ```Art```                    | Art                           | 58,373    | 1,990    | 98      | 54,802     |
@@ -26,7 +32,7 @@ We create a graph format of MAPLE for graph mining tasks (e.g., node classificat
 | ```Chemistry```              | Chemistry                     | 1,849,956 | 35,538   | 100     | 2,721,253  |
 | ```Medicine```               | Medicine                      | 2,646,105 | 36,619   | 100     | 4,345,385  |
 
-#### Edge Statistics
+### Edge Statistics
 | Folder                       | Field                         | #Paper-Paper Edges | #Paper-Label Edges | #Paper-Venue Edges | #Paper-Author Edges |
 | ---------------------------- | ----------------------------- | ---------- | ---------- | --------- | ---------- |
 | ```Art```                    | Art                           | 7,184      | 141,542    | 58,373    | 76,728     |
@@ -51,5 +57,91 @@ We create a graph format of MAPLE for graph mining tasks (e.g., node classificat
 | ```Medicine```               | Medicine                      | 12,661,657 | 14,224,845 | 2,646,105 | 14,942,938 |
 
 
+## Data Format
+In each folder (e.g., ```Art/```), you can see 8 files. 4 of them contain node information (i.e., ```papers.txt```, ```labels.txt```, ```venues.txt```, and ```authors.txt```), and the other 4 contain edge information (i.e., ```paper-paper.txt```, ```paper-label.txt```, ```paper-venue.txt```, and ```paper-author.txt```).
+
+For node files, each line represent one node. The first column is the node ID; the second column is node text information (i.e., paper title+abstract, label name, venue name, and author name). For example,
+
+**```papers.txt```**:
+```
+PAPER_2795952975	reading sugar mill ruins the island nobody spoiled and other fantasies of colonial desire
+PAPER_2009758184	issues in the levantine epipaleolithic ...
+PAPER_2333162778	the life and unusual ideas of adelbert ames jr ...
+```
+
+**```labels.txt```**:
+```
+LABEL_2780583484	papyrus
+LABEL_2778949450	scientific writing
+LABEL_2780412351	purgatory
+```
+
+**```venues.txt```**:
+```
+VENUE_26308392	the journal of aesthetics and art criticism
+VENUE_93676754	modern language review
+VENUE_998751717	classical world
+```
+
+**```authors.txt```**:
+```
+AUTHOR_12035	stephen rickerby
+AUTHOR_127649	clementine deliss
+AUTHOR_1395514	tomas garciasalgado
+```
+
+For edge files, each line represent one edge. The first column is the source node ID; the second column is the target node ID. Note that the edge in ```paper-paper.txt``` is directed, where the first node cites the second node. For example,
+
+**```paper-paper.txt```**:
+```
+PAPER_2009758184	PAPER_2093664100
+PAPER_2018118016	PAPER_2324859060
+PAPER_2085948119	PAPER_2077568497
+```
+
+**```paper-label.txt```**:
+```
+PAPER_2795952975	LABEL_52119013
+PAPER_2009758184	LABEL_15708023
+PAPER_2333162778	LABEL_554144382
+```
+
+**```paper-venue.txt```**:
+```
+PAPER_2795952975	VENUE_48411547
+PAPER_2009758184	VENUE_173708173
+PAPER_2333162778	VENUE_103229351
+```
+
+**```paper-author.txt```**:
+```
+PAPER_2795952975	AUTHOR_2100569728
+PAPER_2795952975	AUTHOR_2118309675
+PAPER_2009758184	AUTHOR_2591088348
+```
+
+## MeSH Nodes in Biology, Chemistry, and Medicine Datasets
+In the original format of MAPLE, we have three additional datasets ```Biology_MeSH```, ```Chemistry_MeSH```, and ```Medicine_MeSH```, where each paper has its MeSH labels (different from the labels from the Microsoft Academic Graph mentioned above). When creating the graph format of MAPLE, we merge ```X_MeSH``` and ```X``` datasets together (X = Biology, Chemistry, and Medicine). Therefore, in these three folders, you can see two additional files ```meshs.txt``` and ```paper-mesh.txt``` representing MeSH nodes and Paper-MeSH edges, respectively.
+
+### Node and Edge Statistics
+| Folder                       | Field                         | #MeSH Nodes | #Paper-MeSH Edges |
+| ---------------------------- | ----------------------------- | ----------- | ----------------- |
+| ```Biology```                | Biology                       | 25,039      | 19,131,720        |
+| ```Chemistry```              | Chemistry                     | 21,585      | 8,370,930         |       
+| ```Medicine```               | Medicine                      | 25,188      | 18,162,351        |
+
 ### Data Format
-In each folder (e.g., ```Art/```), you can see 8 files.
+
+**```meshs.txt```**:
+```
+MESH_D000818	animals
+MESH_D001824	body constitution
+MESH_D005075	biological evolution
+```
+
+**```paper-mesh.txt```**:
+```
+PAPER_1816482797	MESH_D005810
+PAPER_1816482797	MESH_D005808
+PAPER_1816482797	MESH_D020125
+```
