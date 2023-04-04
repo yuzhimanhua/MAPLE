@@ -1,1 +1,55 @@
-We create a graph format of MAPLE for graph mining tasks (e.g., node classification, link prediction). You can download the datasets from [**HERE**](https://zenodo.org/record/7787731). Once you unzip the downloaded file, you can see 20 folders, corresponding to 20 datasets. 
+## The Graph Format of MAPLE
+We create a graph format of MAPLE for graph mining tasks (e.g., node classification, link prediction). You can download the datasets from [**HERE**](https://zenodo.org/record/7787731). Once you unzip the downloaded file, you can see 20 folders, corresponding to 20 datasets. Each of the 20 datasets is a heterogeneous graph with 4 types of nodes (i.e., papers, labels, venues, and authors) and 4 types of edges (i.e., paper-paper edges, paper-label edges, paper-venue edges, and paper-author edges).
+
+### Dataset Statistics
+#### Node Statistics
+| Folder                       | Field                         | #Paper Nodes | #Label Nodes | #Venue Nodes | #Author Nodes |
+| ---------------------------- | ----------------------------- | --------- | -------- | ------- | ---------- |
+| ```Art```                    | Art                           | 58,373    | 1,990    | 98      | 54,802     |
+| ```Philosophy```             | Philosophy                    | 59,296    | 3,758    | 98      | 36,619     |
+| ```Geography```              | Geography                     | 73,883    | 3,285    | 98      | 157,423    |
+| ```Business```               | Business                      | 84,858    | 2,392    | 97      | 100,525    |
+| ```Sociology```              | Sociology                     | 90,208    | 1,935    | 98      | 85,793     |
+| ```History```                | History                       | 113,147   | 2,689    | 99      | 84,529     |
+| ```Political_Science```      | Political Science             | 115,291   | 4,990    | 98      | 93,393     |
+| ```Environmental_Science```  | Environmental Science         | 123,945   | 694      | 100     | 265,728    |
+| ```Economics```              | Economics                     | 178,670   | 5,205    | 97      | 135,247    |
+| ```CSRankings```             | Computer Science (Conference) | 263,393   | 13,613   | 75      | 331,582    |
+| ```Engineering```            | Engineering                   | 270,006   | 10,683   | 100     | 430,046    |
+| ```Psychology```             | Psychology                    | 372,954   | 7,641    | 100     | 460,123    |
+| ```Computer_Science```       | Computer Science (Journal)    | 410,603   | 15,540   | 96      | 634,506    |
+| ```Geology```                | Geology                       | 431,834   | 7,883    | 100     | 471,216    |
+| ```Mathematics```            | Mathematics                   | 490,551   | 14,271   | 98      | 404,066    |
+| ```Materials_Science```      | Materials Science             | 1,337,731 | 6,802    | 99      | 1,904,549  |
+| ```Physics```                | Physics                       | 1,369,983 | 16,664   | 91      | 1,392,070  |
+| ```Biology```                | Biology                       | 1,588,778 | 64,267   | 100     | 2,730,547  |
+| ```Chemistry```              | Chemistry                     | 1,849,956 | 35,538   | 100     | 2,721,253  |
+| ```Medicine```               | Medicine                      | 2,646,105 | 36,619   | 100     | 4,345,385  |
+
+#### Edge Statistics
+| Folder                       | Field                         | #Paper-Paper Edges | #Paper-Label Edges | #Paper-Venue Edges | #Paper-Author Edges |
+| ---------------------------- | ----------------------------- | ---------- | ---------- | --------- | ---------- |
+| ```Art```                    | Art                           | 7,184      | 141,542    | 58,373    | 76,728     |
+| ```Philosophy```             | Philosophy                    | 63,610     | 220,311    | 59,296    | 66,232     |
+| ```Geography```              | Geography                     | 263,331    | 164,799    | 73,883    | 267,861    |
+| ```Business```               | Business                      | 797,408    | 301,773    | 84,858    | 199,068    |
+| ```Sociology```              | Sociology                     | 267,524    | 209,142    | 90,208    | 143,573    |
+| ```History```                | History                       | 30,055     | 219,295    | 113,147   | 137,854    |
+| ```Political_Science```      | Political Science             | 165,629    | 358,152    | 115,291   | 172,497    |
+| ```Environmental_Science```  | Environmental Science         | 761,972    | 265,040    | 123,945   | 533,108    |
+| ```Economics```              | Economics                     | 1,532,072  | 886,380    | 178,670   | 351,288    |
+| ```CSRankings```             | Computer Science (Conference) | 1,464,679  | 1,603,672  | 263,393   | 892,758    |
+| ```Engineering```            | Engineering                   | 1,212,376  | 1,346,644  | 270,006   | 824,892    |
+| ```Psychology```             | Psychology                    | 5,023,328  | 1,876,655  | 372,954   | 1,419,064  |
+| ```Computer_Science```       | Computer Science (Journal)    | 1,494,272  | 2,453,776  | 410,603   | 1,353,330  |
+| ```Geology```                | Geology                       | 7,628,445  | 2,572,523  | 431,834   | 1,533,938  |
+| ```Mathematics```            | Mathematics                   | 2,385,322  | 3,155,560  | 490,551   | 1,055,335  |
+| ```Materials_Science```      | Materials Science             | 14,602,443 | 5,923,115  | 1,337,731 | 6,460,288  |
+| ```Physics```                | Physics                       | 18,817,355 | 9,960,642  | 1,369,983 | 13,482,670 |
+| ```Biology```                | Biology                       | 29,148,006 | 13,196,897 | 1,588,778 | 8,914,115  |
+| ```Chemistry```              | Chemistry                     | 20,499,908 | 11,632,581 | 1,849,956 | 7,941,363  |
+| ```Medicine```               | Medicine                      | 12,661,657 | 14,224,845 | 2,646,105 | 14,942,938 |
+
+
+### Data Format
+In each folder (e.g., ```Art/```), you can see 8 files.
