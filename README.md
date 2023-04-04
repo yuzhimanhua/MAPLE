@@ -14,6 +14,8 @@ This repository contains the datasets and source code used in our paper [The Eff
 - [References](#references)
 
 ## Datasets
+**NOTE: If you are working on graph mining tasks (e.g., node classification, link prediction) in homogeneous/heterogeneous/attributed/text-rich networks, we have also created a graph format of MAPLE, and you can refer to [README_Graph.md](README_Graph.md) for more details.**
+
 The MAPLE benchmark constructed by us contains 20 datasets across 19 fields for scientific literature tagging. You can download the datasets from [**HERE**](https://doi.org/10.5281/zenodo.7611544). Once you unzip the downloaded file, you can see a folder ```MAPLE/```. Please put the folder under the main directory ```./``` of this code repository.
 
 There are 23 folders under ```MAPLE/```, corresponding to 23 datasets. 20 of them with MAG labels are mentioned in the main text of our paper; the other 3 datasets with MeSH labels will be introduced in [the next section](#additional-datasets-with-mesh-labels). Statistics of the 20 "main" datasets are as follows:
