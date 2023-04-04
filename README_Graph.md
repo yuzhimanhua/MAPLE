@@ -1,5 +1,5 @@
 # The Graph Format of MAPLE
-We create a graph format of MAPLE for graph mining tasks (e.g., node classification, link prediction). You can download the datasets from [**HERE**](https://zenodo.org/record/7787731). Once you unzip the downloaded file, there are 20 folders, corresponding to 20 datasets. Each of the 20 datasets is a heterogeneous graph with 4 types of nodes (i.e., papers, labels, venues, and authors) and 4 types of edges (i.e., paper-paper edges, paper-label edges, paper-venue edges, and paper-author edges). Each node is associated with text information, which can be viewed as node attributes.
+We create a graph format of MAPLE for graph mining tasks (e.g., node classification, link prediction). You can download the datasets from [**HERE**](https://zenodo.org/record/7797563). Once you unzip the downloaded file, there are 20 folders, corresponding to 20 datasets. Each of the 20 datasets is a heterogeneous graph with 4 types of nodes (i.e., papers, labels, venues, and authors) and 4 types of edges (i.e., paper-paper edges, paper-label edges, paper-venue edges, and paper-author edges). Each node is associated with text information, which can be viewed as node attributes.
 
 ## Links
 
