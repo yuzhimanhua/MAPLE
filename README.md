@@ -193,6 +193,7 @@ If you find the MAPLE benchmark or this repository useful, please cite our paper
   title={The effect of metadata on scientific literature tagging: A cross-field cross-model study},
   author={Zhang, Yu and Jin, Bowen and Zhu, Qi and Meng, Yu and Han, Jiawei},
   booktitle={WWW'23},
+  pages={1626--1637},
   year={2023}
 }
 ```
